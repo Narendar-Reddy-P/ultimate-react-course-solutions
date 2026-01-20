@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+#root {
+  display: flex;
+  flex-direction: column;
+  width: max(35vw, 40rem);
+  gap: 1rem;
+}
+.toggleBtn {
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: large;
+  border-style: none;
+  align-self: flex-end;
+}
+
+.container {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 4rem;
+}
+
+.numbers > div {
+  background-color: white;
+  border-radius: 3rem;
+  padding: 0.4rem 0.9rem;
+}
+.message {
+  align-self: center;
+}
+.end {
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 4rem;
+}
+.PNbtn {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border-style: none;
+  background-color: #7950f2;
+  color: #fff;
+}
+
+.focus {
+  background-color: #7950f2;
+  color: #fff;
+}
