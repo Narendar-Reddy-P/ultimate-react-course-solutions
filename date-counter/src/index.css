@@ -1,0 +1,17 @@
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+#root > div {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+button {
+  height: 2rem;
+  width: 2rem;
+}

@@ -31,10 +31,11 @@ body {
   padding: 0rem 4rem;
 }
 
-.numbers > div {
+.num {
   background-color: white;
   border-radius: 3rem;
   padding: 0.4rem 0.9rem;
+  color: black;
 }
 .message {
   align-self: center;
