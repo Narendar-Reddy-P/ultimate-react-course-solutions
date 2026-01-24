@@ -2,11 +2,6 @@ import { useState } from "react";
 
 function App() {
   const [step, setStep] = useState(1);
-  function decrementStep() {
-    if (step > 1) {
-      setStep((n) => n - 1);
-    }
-  }
   const [number, setNumber] = useState(0);
   function message() {
     let date = new Date();
@@ -27,19 +22,37 @@ function App() {
       }
     }
   }
+  function handleReset() {
+    setStep(1);
+    setNumber(0);
+  }
   return (
     <>
       <div>
-        <button onClick={decrementStep}>-</button>
         <p>Step: {step}</p>
-        <button onClick={() => setStep((n) => n + 1)}>+</button>
+        <input
+          type="range"
+          min={1}
+          max={10}
+          value={step}
+          onChange={(e) => setStep(Number(e.target.value))}
+        ></input>
       </div>
       <div>
         <button onClick={() => setNumber((n) => n - step)}>-</button>
-        <p>Count: {number}</p>
+        <input
+          type="text"
+          value={number}
+          onChange={(e) => setNumber(Number(e.target.value))}
+        ></input>
         <button onClick={() => setNumber((n) => n + step)}>+</button>
       </div>
       <div>{message()}</div>
+      <div>
+        {(number != 0 || step != 1) && (
+          <button onClick={handleReset}>Reset</button>
+        )}
+      </div>
     </>
   );
 }
