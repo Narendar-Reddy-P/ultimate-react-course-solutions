@@ -130,7 +130,7 @@ function Stats({ items }) {
   }
 
   let packedItems = items.filter((items) => items.packed === true).length;
-  let percentage = Math.round(packedItems / items.length) * 100;
+  let percentage = Math.round((packedItems / items.length) * 100);
 
   if (percentage === 100) {
     return <div className="stats">Everything is packed. Let's go ✈️.</div>;
