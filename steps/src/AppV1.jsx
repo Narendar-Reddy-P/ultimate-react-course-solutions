@@ -5,18 +5,6 @@ function App() {
   const [state, setState] = useState(1);
   const [containerState, setContainerState] = useState(true);
 
-  function handlePrevious() {
-    if (state !== 1) {
-      setState((state) => state - 1);
-    }
-  }
-
-  function handleNext() {
-    if (state !== 3) {
-      setState((state) => state + 1);
-    }
-  }
-
   return (
     <>
       <button
@@ -28,6 +16,7 @@ function App() {
       {containerState && (
         <div className="container">
           <div className="numbers">
+            {console.log(state >= 2)}
             <div className="num focus">1</div>
             <div className={`num ${state >= 2 ? "focus" : ""}`}>2</div>
             <div className={`num ${state >= 3 ? "focus" : ""}`}>3</div>
@@ -38,24 +27,26 @@ function App() {
               (state === 3 && messages[2])}
           </div>
           <div className="end">
-            <Button type={"PNbtn"} onHandle={handlePrevious}>
-              <span>👈 Previous</span>
-            </Button>
-            <Button type={"PNbtn"} onHandle={handleNext}>
-              <span>Next 👉</span>
-            </Button>
+            <button
+              className="PNbtn"
+              onClick={() =>
+                state === 1 ? {} : setState((state) => state - 1)
+              }
+            >
+              Previous
+            </button>
+            <button
+              className="PNbtn"
+              onClick={() =>
+                state === 3 ? {} : setState((state) => state + 1)
+              }
+            >
+              Next
+            </button>
           </div>
         </div>
       )}
     </>
-  );
-}
-
-function Button({ type, children, onHandle }) {
-  return (
-    <button className={type} onClick={onHandle}>
-      {children}
-    </button>
   );
 }
 
