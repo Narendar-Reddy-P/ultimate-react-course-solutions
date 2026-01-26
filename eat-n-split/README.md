@@ -1,1 +1,1 @@
-Use 3 times nested operator instead of nested ternary
+![alt text](image.png)
