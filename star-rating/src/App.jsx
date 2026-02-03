@@ -1,17 +1,26 @@
+import { useState } from "react";
 import StarRating from "./StarRating";
 
 export default function App() {
-  return <StarRating maxRating={5} />;
+  return (
+    <>
+      <StarRating maxRating={5} />;
+      <Test />
+    </>
+  );
 }
 
-/*
-FULL STAR
+function Test() {
+  const [movieRating, setMovieRating] = useState(0);
 
-
-
-
-EMPTY STAR
-
-
-
-*/
+  return (
+    <div>
+      <StarRating
+        color="blue"
+        maxRating={10}
+        onSetRating={setMovieRating}
+      ></StarRating>
+      <p>This movie was rated {movieRating} stars</p>
+    </div>
+  );
+}
