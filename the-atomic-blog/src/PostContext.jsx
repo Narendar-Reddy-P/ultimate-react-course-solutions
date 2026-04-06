@@ -57,4 +57,6 @@ function usePosts() {
     throw new Error("PostContext was used outside of the PostProvider");
   return context;
 }
+
+//eslint-disable-next-line
 export { PostProvider, usePosts };
